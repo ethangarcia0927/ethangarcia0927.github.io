@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(84, 84, 84);
+    color:rgb(213, 213, 213);
+
+    header, main, nav, footer{
+        text-align: center;
+    }
+}
+
+nav a { /* links within "nav" container */
+    padding: 15px;
+    padding-bottom: 4px;
+    font-size: 1.8em;
+    text-decoration: none; /* removes underline*/
+    color: rgb(172, 255, 229); /* by default, links are blue*/
+}
+
+nav a:hover { /* links within "nav" container */
+    padding: 15px;
+    padding-bottom: 4px;
+    font-size: 3.6em;
+    text-decoration: none; /* removes underline*/
+    color: rgb(255, 109, 109); /* by default, links are blue*/
+}
+
+.PL-img {
+  box-shadow: 4px 4px 10px rgb(0, 0, 0);
+}
+
