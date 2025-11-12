@@ -2,6 +2,9 @@
 document.querySelector("#zip").addEventListener("change",displayCity);
 document.querySelector("#state").addEventListener("change",displayCounties);
 document.querySelector("#username").addEventListener("change",checkUsername);
+document.querySelector("#signupForm").addEventListener("submit", function(event) {
+    validateForm(event);
+});
 
 // functions
 
@@ -46,5 +49,36 @@ async function checkUsername() {
     else {
         usernameError.innerHTML = " Username taken";
         usernameError.style.color = "red";
+    }
+}
+
+// Validating form data
+function validateForm(e) {
+    let isValid = true;
+    let username = document.querySelector("#username").value;
+    let password = document.querySelector("#password").value;
+    let usernameError = document.querySelector("#usernameError");
+    let passwordError = document.querySelector("#passwordError");
+
+    // Username checks
+    if (username.length === 0) {
+        document.querySelector("#usernameError").innerHTML = "Username Required!";
+        isValid = false;
+    } else if (username.length <= 5) {
+        usernameError.innerHTML = "Username must be greater than five characters!";
+        isValid = false;
+    }
+
+    // Password Checks
+    if (password.length < 6) {
+        passwordError.innerHTML = "Pasword must be at least six characters!";
+        isValid = false;
+    } else if (password !== retypePassword) {
+        passwordError.innerHTML = "Passwords do not match!";
+        isValid = false;
+    }
+    
+    if (!isValid) {
+        e.preventDefault();
     }
 }
