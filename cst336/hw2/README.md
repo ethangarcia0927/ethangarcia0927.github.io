@@ -1,1 +1,0 @@
-# USGeographyQuiz.github.io
