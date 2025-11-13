@@ -1,9 +1,11 @@
 document.querySelector("#catForm").addEventListener("submit", getCats);
 
+
 async function getCats(e) {
     e.preventDefault();
 
-    let limit = document.querySelector("#limit").ariaValueMax;
+    let limit = Number(document.querySelector("#limit").value);
+    console.log("Limit is:", Number(document.querySelector("#limit").value)); // Debugging
     let error = document.querySelector("#limitError");
     let results = document.querySelector("#results");
 
@@ -11,7 +13,7 @@ async function getCats(e) {
     results.innerHTML = "";
 
     // Validation
-    if (limit === "" || limit < 1 || limit > 10) {
+    if (!limit || limit < 1 || limit > 25) {
         error.innerHTML = "Please enter a number between 1 and 10."
         error.style.color = "red";
         return;
@@ -24,9 +26,9 @@ async function getCats(e) {
     let data = await response.json();
 
     // Display cat images
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < limit; i++) {
         results.innerHTML += `
-        <img src="${data[i].url}" width="250" style="margin:10px; border-radius:10px;">
+        <img src="${data[i].url}" width="275" style="margin:10px; border-radius:10px;">
         `;
     }
 }
