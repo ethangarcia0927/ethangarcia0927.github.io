@@ -81,6 +81,7 @@ function validateForm(e) {
         isValid = false;
     } else if (username.length <= 5) {
         usernameError.innerHTML = "Username must be greater than five characters!";
+        usernameError.style.color = "red";
         isValid = false;
     }
 
