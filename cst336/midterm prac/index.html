@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Famous Quotes Viewer</title>
+    <!-- Link to CSS IMPORTANT -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Underscore.js to shuffle arrays for random radio button (rubric 4) IMPORTANT -->
+     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js"></script>
+</head>
+<body>
+    <h1>Famous Quotes</h1>
+
+    <!-- ------------------ Random Quote Section ------------------ -->
+    <div id="quoteContainer">
+        <!-- Rubric 1: Display random quote on page load -->
+        <p id="quoteText"></p> <!-- Quote text goes here -->
+        <p id="quoteAuthor"></p> <!-- Author name goes here -->
+        <!-- Rubric 2: Button to display author bio and picture -->
+        <button id="displayAuthorInfo">Display Author Info</button>
+    </div>
+
+    <!-- ------------------ Author Info Section ------------------ -->
+    <!-- Rubric 3: Two-column layout with flexbox -->
+    <div id="authorInfo" class="flex-container">
+        <!-- Left column: author picture (Rubric 2) -->
+        <div id="authorPic"></div>
+        <!-- Right column: author bio (Rubric 2) -->
+        <div id="authorBio"></div>
+    </div>
+    
+    <hr>
+
+    <!-- ------------------ Translate Quote Section ------------------ -->
+    <div id="translateContainer">
+        <h3>Translate Quote</h3>
+        <!-- Rubric 4: Language radio buttons, random order -->
+        <div id="languageChoices"></div>
+        <!-- Rubric 6: Button to translate quote -->
+        <button id="translateBtn">Translate</button>
+        <!-- Rubric 5: Display corresponding flag -->
+        <div id="flag"></div>
+        <!-- Rubric 6: Display translated quote -->
+        <p id="translatedQuote"></p>
+    </div>
+
+    <hr>
+
+    <!-- ------------------ Get Multiple Quotes Section ------------------ -->
+    <div id="getQuotesContainer">
+        <!-- Rubric 7: Input for number of quotes (1-5) -->
+        <label for="numQuotes">Number of Quotes (1-5):</label>
+        <input type="number" id="numQuotes" min="1" max="5">
+        <!-- Rubric 7: Error message if invalid -->
+        <span id="numQuotesError"></span>
+        <!-- Rubric 8: Button to fetch multiple quotes -->
+        <button id="getQuotesBtn">Get Quotes</button>
+        <!-- Rubric 8: Display fetched quotes here -->
+        <div id="quotesResults"></div>
+    </div>
+
+    <hr>
+
+    <!-- ============================ Footer ============================ -->
+    <footer>
+        <p>CST336 Internet Programming. 2025 &copy; Garcia</p>
+        <p><strong>Disclaimer:</strong> The information in this webpage is fictitious.</p>
+        <!-- Rubric 10: Including proper footer / disclaimer -->
+        <img src="img/csumb-logo.png" alt="CSUMB logo">
+    </footer>
+
+
+     <!-- JS Script IMPORTANT -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
